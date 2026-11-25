@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رفّ الكتب | الرئيسية</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">📚 رفّ الكتب</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+            <button type="button" class="cart-btn" id="cartToggleBtn" onclick="toggleCart()" aria-label="سلة المشتريات">
+                🛒 السلة <span class="cart-badge" id="cartCount">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-label="سلة الطلبات">
+        <div class="cart-header">
+            <h3>سلة الطلبات</h3>
+            <button type="button" class="close-cart" onclick="toggleCart()" aria-label="إغلاق السلة">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">السلة فارغة حالياً.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>الإجمالي:</span>
+                <strong id="cartTotal">0 ر.س</strong>
+            </div>
+            <button type="button" class="btn cart-checkout-btn" onclick="checkoutCart()">تأكيد الطلب</button>
+        </div>
+    </aside>
+    <div class="cart-backdrop" id="cartBackdrop" onclick="toggleCart()"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>رفّ الكتب.. حيث تبدأ الحكايات</h1>
+            <p>نختار كتباً ملهمة ومستلزمات قراءة أنيقة لتجعل أوقات القراءة أكثر هدوءاً ومتعة.</p>
+            <a href="#menu" class="btn">استكشف الكتب والمستلزمات</a>
+        </div>
+    </section>
+
+    <section id="menu" class="container">
+        <h2 class="section-title">أبرز الكتب والمستلزمات</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500" alt="رواية ظل الريح">
+                <h3>رواية ظل الريح</h3>
+                <p>عمل أدبي مشوق بأسلوب سردي غني يأخذ القارئ في رحلة مليئة بالغموض والدهشة.</p>
+                <span class="price">65 ر.س</span>
+                <button class="order-btn" onclick="orderItem('رواية ظل الريح', 65)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500" alt="كتاب فن التركيز العميق">
+                <h3>كتاب فن التركيز العميق</h3>
+                <p>دليل عملي لتنظيم الوقت وبناء عادات ذهنية هادئة تعزز الإنتاجية اليومية.</p>
+                <span class="price">72 ر.س</span>
+                <button class="order-btn" onclick="orderItem('كتاب فن التركيز العميق', 72)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=500" alt="مجموعة أدب العالم">
+                <h3>مجموعة أدب العالم</h3>
+                <p>مختارات قصصية ونصوص ملهمة من ثقافات متنوعة بطباعة ورقية مريحة للعين.</p>
+                <span class="price">85 ر.س</span>
+                <button class="order-btn" onclick="orderItem('مجموعة أدب العالم', 85)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=500" alt="دفتر ملاحظات القراءة">
+                <h3>دفتر ملاحظات القراءة</h3>
+                <p>دفتر منظم لتدوين الاقتباسات وتلخيص الأفكار وتقييم الكتب بعد كل قراءة.</p>
+                <span class="price">45 ر.س</span>
+                <button class="order-btn" onclick="orderItem('دفتر ملاحظات القراءة', 45)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500" alt="فواصل كتب معدنية">
+                <h3>فواصل كتب معدنية</h3>
+                <p>تصاميم أنيقة ودقيقة تحفظ صفحاتك دون ثني الورق وتناسب مختلف الأحجام.</p>
+                <span class="price">32 ر.س</span>
+                <button class="order-btn" onclick="orderItem('فواصل كتب معدنية', 32)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=500" alt="مصباح قراءة مكتبي">
+                <h3>مصباح قراءة مكتبي</h3>
+                <p>إضاءة موجهة هادئة مريحة للعين مثالية للقراءة الليلية والمذاكرة.</p>
+                <span class="price">95 ر.س</span>
+                <button class="order-btn" onclick="orderItem('مصباح قراءة مكتبي', 95)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=500" alt="حقيبة قماش للقراء">
+                <h3>حقيبة قماش للقراء</h3>
+                <p>حقيبة عملية متينة لحمل الكتب والدفاتر والأغراض اليومية بكل سهولة.</p>
+                <span class="price">55 ر.س</span>
+                <button class="order-btn" onclick="orderItem('حقيبة قماش للقراء', 55)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=500" alt="موسوعة التاريخ والفكر">
+                <h3>موسوعة التاريخ والفكر</h3>
+                <p>إصدار ثري يجمع محطات تاريخية ورؤى معرفية بأسلوب واضح وميسر.</p>
+                <span class="price">110 ر.س</span>
+                <button class="order-btn" onclick="orderItem('موسوعة التاريخ والفكر', 110)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=500" alt="صندوق هدية القارئ">
+                <h3>صندوق هدية القارئ</h3>
+                <p>طقم متكامل يضم كتاباً مختاراً ودفتر ملاحظات وفاصل كتاب في تغليف أنيق.</p>
+                <span class="price">145 ر.س</span>
+                <button class="order-btn" onclick="orderItem('صندوق هدية القارئ', 145)">اطلب الآن</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>رفّ الكتب ومستلزمات القراءة</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
